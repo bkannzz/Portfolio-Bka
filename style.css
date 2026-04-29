@@ -350,14 +350,13 @@ body{
     padding: 1rem; /* espaçamento interno para os textos */
 }
 
-
 .info-projetos{
     font-size: 20px;
 }
 
 .paragrafo-projetos{
     text-align: center;
-    line-height: 1.2rem;
+    line-height: 1.2rem; /* espaçamento da altura entre as linhas */
 }
 
 .botao-projeto{
@@ -422,7 +421,6 @@ body{
     background-color: var(--primaria);
     max-width: 550px; /* largura máxima da caixa */
     margin: 0 auto; /* centralizar a caixa */
-    backdrop-filter: blur(10px);
     border-radius: 16px;
     box-shadow: 9px 15px 26px 13px rgba(0, 0, 0, 0.40);
 }
@@ -435,9 +433,6 @@ body{
     gap: 25px;
     padding: 20px 30px 20px 50px; /* espaçamento interno para a lista */
     cursor: default;
-}
-
-.certificados-elemento{
     font-weight: 300;
 }
 
@@ -465,11 +460,11 @@ body{
     padding: 1rem; /* espaçamento interno para os campos */
     background-color: var(--secundaria);
     color: var(--cor-fonte);
-    outline: none; /* remover contorno ao clicar no campo */
+    outline: none; /* remover contorno branco ao clicar no campo */
     margin-bottom: 15px;
 }
 
-.campo-form:focus{
+.campo-form:focus{ /* efeito ao clicar no campo */
     border-color: var(--azul-claro);
     box-shadow: 0 0 10px rgba(79, 70, 229, 0.5);
 }
