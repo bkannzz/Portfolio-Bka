@@ -1,0 +1,499 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@keyframes appear{ /* Criar animações */
+    from{
+        opacity: 0;
+        scale: 0.5;
+    }
+    to{
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+.block{
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+
+html{
+    scroll-behavior: smooth; /* suavizar o scroll */
+}
+
+:root{
+    --cor-fonte : #f7efe7;
+    --primaria: #07004D;
+    --azul-claro: #2D82B7;
+    --roxo: #1f0130;;
+    --secundaria: #050405;
+}
+
+body{
+    background: linear-gradient(to right, var(--primaria) 5%, var(--roxo) 90%); /* fundo com gradiente */
+    color: var(--cor-fonte);
+    font-family: "Libre Franklin", sans-serif;
+}
+
+/* Menu de Navegação */
+
+.navegacao{
+    position: fixed; /* fixar menu na tela */
+    top: 0; /* posicionar no topo */
+    background: rgba(3, 3, 1, 0.6); /* fundo semi-transparente */
+    width: 100%; /* ocupar toda a largura */
+    z-index: 1000; /* garantir que fique acima de outros elementos */
+    padding: 1.5rem 0; /* espaçamento interno */
+} 
+
+.navegacao-menu{
+    display: flex; /* usar flexbox para layout */
+    list-style: none; /* remover marcadores de lista */
+    gap: 3rem; /* espaçamento entre os itens */
+    justify-content: center; /* centralizar itens horizontalmente */
+}
+
+.menu-link{
+    color: var(--cor-fonte); /* cor do texto */
+    text-decoration: none; /* remover sublinhado */
+    font-family: 'Noto Serif', serif; /* fonte do menu */
+    font-size: 1.2rem; /* tamanho da fonte */
+    font-weight: 500;
+    position: relative; /* necessário para posicionar o ::after */
+    padding-bottom: 2px; /* espaço para a linha de destaque */
+    transition: color 0.5s ease; /* transição suave para hover */
+}
+
+.menu-link:hover{
+    color: #41acee; /* cor ao passar o mouse */
+}
+
+/* after -> depois / before -> antes */
+
+.menu-link::after{
+    content: ''; /* necessário para criar o elemento */
+    height: 2px; /* altura da linha */
+    width: 0; /* largura inicial da linha */
+    background: linear-gradient(to right, var(--primaria), var(--azul-claro)); /* gradiente para a linha */
+    position: absolute; /* posicionamento absoluto */
+    left: 0; /* alinhar à esquerda */
+    bottom: 0; /* alinhar à base do link */
+    transition: width 0.5s ease; /* transição suave para a largura */
+}
+
+.menu-link:hover::after{
+    width: 100%; /* expandir a linha ao passar o mouse */
+}
+
+.cabecalho{
+    display: flex; /* usar flexbox para layout */
+    flex-direction: column; /* organizar itens em coluna */
+    align-items: center; /* centralizar itens horizontalmente */
+    justify-content: center; /* centralizar itens verticalmente */
+    height: 100vh; /* ocupar toda a altura da tela */
+    text-align: center; /* centralizar texto */
+}
+
+.cabecalho-titulo{
+    font-size: 4rem; /* tamanho da fonte do título */
+    font-weight: 600; /* peso da fonte do título */
+    margin-bottom: 15px; /* espaçamento entre o título e o primeiro parágrafo */
+}
+
+/* Animação Título Principal */
+
+.animacao-titulo{
+    border-right: 4px solid #39a6e9; /* criar a linha azul */
+    width: 12ch; /* distância da linha pro texto principal */
+    overflow: hidden; /* esconder o texto quando a linha passar sobre ele */
+    white-space: nowrap; /* sem quebra de linhas */
+    animation: cursor 0.6s infinite, trocaCor 6s infinite steps(18); /* ativar a animação */
+}
+
+.animacao-titulo span{
+    color: #39a6e9; /* cor do texto principal */
+}
+
+@keyframes cursor{ /* criar animação */
+    50%{
+        border-right-color: transparent;
+    }
+}
+
+@keyframes trocaCor{
+    0%{
+        width: 0;
+    }
+    40%{
+        width: 12ch;
+    }
+
+    60%{
+        width: 12ch;
+    }
+
+    100%{
+        width: 0;
+    }
+}
+
+/* Cabeçalho */
+
+.cabecalho-paragrafo1{
+    font-size: 1.5rem; /* tamanho da fonte do primeiro parágrafo */
+    font-weight: 400; /* peso da fonte do primeiro parágrafo */
+    margin-bottom: 20px; /* espaçamento entre o primeiro e o segundo parágrafo */
+}
+
+.cabecalho-paragrafo2{
+    font-size: 1.2rem; /* tamanho da fonte do segundo parágrafo */
+    font-weight: 500; /* peso da fonte do segundo parágrafo */
+}
+
+/* Sobre */
+
+.contato{
+    padding: 13rem 4rem; /* espaçamento interno */
+}
+
+.certificados{
+    padding: 7rem;
+}
+
+.projetos{
+    padding: 6rem 4rem;
+}
+
+.sobre{
+    margin: 10rem;
+    padding-top: 90px;
+}
+
+.sobre-titulo{
+    -webkit-text-stroke: 1px black;
+    font-size: 3rem; /* tamanho da fonte do título da seção "Sobre" */
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 30px; /* espaçamento entre o título e a caixa de conteúdo */
+}
+
+.sobre-caixa{
+    background-color: var(--primaria);
+    padding: 1.5rem; /* espaçamento interno */
+    max-width: 900px; /* largura máxima da caixa */
+    margin: auto; /* centralizar a caixa */
+    border-radius: 16px; /* cantos arredondados */
+    box-shadow: 9px 15px 26px 13px rgba(0, 0, 0, 0.40); /* sombra para dar profundidade */  
+}
+
+.sobre-paragrafo{
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+/* Habilidades */
+
+.flex{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.titulo-skills{
+    font-weight: 500;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.skills ul{
+    list-style: none;
+}
+
+.tecnologia{ /* tamanho imagem */
+    width: 60px;
+    height: 60px;
+}
+
+.barras{
+    background-color: #c5c5c5;
+    width: 50%;
+    height: 20px;
+    display: block;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden; 
+}
+
+.barras > span{
+    height: 20px;
+    background-color: #39e218;
+    position: absolute;
+}
+
+.html{
+    width: 75%;
+    animation: html 3s;
+}
+
+.css{
+    width: 65%;
+    animation: css 3s;
+}
+
+.javascript{
+    width: 40%;
+    animation: javascript 3s;
+}
+
+.python{
+    width: 70%;
+    animation: python 3s;
+}
+
+.figma{
+    width: 85%;
+    animation: figma 3s;
+}
+
+@keyframes html{ /* animação */
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 75%;
+    }
+}
+
+@keyframes css{ /* animação */
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 65%;
+    }
+}
+
+@keyframes javascript{ /* animação */
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 40%;
+    }
+}
+
+@keyframes python{ /* animação */
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 70%;
+    }
+}
+
+@keyframes figma{ /* animação */
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 85%;
+    }
+}
+
+/* Projetos */
+
+.projetos-titulo{
+    font-size: 3rem; /* tamanho da fonte do título da seção "Sobre" */
+    -webkit-text-stroke: 1px black; /* adicionar uma borda na letra */
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 40px; /* espaçamento entre o título e a caixa de conteúdo */
+}
+
+.projetos-caixa{
+    display: grid; /* organizar os elementos um do lado do outro */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* criar colunas responsivas */
+    gap: 2rem; /* espaçamento entre os cards */
+    max-width: 1200px; /* largura máxima da caixa */
+    margin: 0 auto; /* centralizar a caixa */
+} 
+
+.projetos-card{
+    background: linear-gradient(to right, var(--secundaria), var(--primaria));
+    border-radius: 16px; /* cantos arredondados */
+    backdrop-filter: blur(10px); /* efeito de desfoque para criar um visual mais moderno */
+    overflow: hidden; /* garantir que o conteúdo não ultrapasse os limites do card */
+    transition: all 0.5s ease; /* transição suave para hover */
+}
+
+.projetos-card:hover{
+    box-shadow: 15px 15px 26px 13px rgba(0, 0, 0, 0.50);
+    transform: translateY(-5px); /* levantar o card ao passar o mouse */
+}  
+
+.projetos-imagem{
+    height: 200px;  /* altura da imagem  */
+    width: 100%;  /* largura da imagem  */  
+    object-fit: cover;  /* garantir que a imagem preencha o card sem distorção  */
+} 
+
+.projetos-caixa-textos{
+    padding: 1rem; /* espaçamento interno para os textos */
+}
+
+
+.info-projetos{
+    font-size: 20px;
+}
+
+.paragrafo-projetos{
+    text-align: center;
+    line-height: 1.2rem;
+}
+
+.botao-projeto{
+    /* display: block; /* necessário pra centralizar um único botão */
+    width: 90px;
+    color: var(--cor-fonte);
+    background-color: #5a1a96;
+    padding: 0.8rem 1rem; /* espaçamento interno para o botão */
+    border: none;
+    border-radius: 8px; /* cantos arredondados para o botão */
+    cursor: pointer; /* mudar o cursor ao passar o mouse */
+    text-decoration: none; /* remover sublinhado do link */
+    text-align: center;
+    font-weight: 600;
+    font-size: 15px;
+    transition: background-color 0.7s ease;
+}
+
+.botao-projeto:hover{
+    background-color: #38105e;
+}
+
+.botao-secundario-projeto{
+    /* display: block; /* necessário pra centralizar um único botão */
+    width: 90px;
+    color: var(--cor-fonte);
+    background-color: #ac5318;
+    padding: 0.8rem 1rem; /* espaçamento interno para o botão */
+    border: none;
+    border-radius: 8px; /* cantos arredondados para o botão */
+    cursor: pointer; /* mudar o cursor ao passar o mouse */
+    text-decoration: none; /* remover sublinhado do link */
+    text-align: center;
+    font-weight: 600;
+    font-size: 15px;
+    transition: background-color 0.7s ease;
+}
+
+.botao-secundario-projeto:hover{
+    background-color: #662a03;
+}
+
+.botoes{
+    margin-top: 15px;
+    display: flex; /* necessário pra centralizar vários botões */
+    justify-content: center; /* centralizar botões no centro */
+    align-items: center;
+    gap: 20px;
+}
+
+/* Certificados */
+
+.certificados-titulo{
+    -webkit-text-stroke: 1px black;
+    font-size: 3rem; /* tamanho da fonte do título da seção "Sobre" */
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 50px; /* espaçamento entre o título e a caixa de conteúdo */
+}
+
+.certificados-caixa{
+    background-color: var(--primaria);
+    max-width: 550px; /* largura máxima da caixa */
+    margin: 0 auto; /* centralizar a caixa */
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    box-shadow: 9px 15px 26px 13px rgba(0, 0, 0, 0.40);
+}
+
+.certificados-lista{
+    display: flex;
+    flex-direction: column;
+    list-style: inside; /* estilo de lista dentro da caixa */
+    font-size: 1.2rem;
+    gap: 25px;
+    padding: 20px 30px 20px 50px; /* espaçamento interno para a lista */
+    cursor: default;
+}
+
+.certificados-elemento{
+    font-weight: 300;
+}
+
+/* Contato */
+
+.contatos-titulo{
+    -webkit-text-stroke: 1px black;
+    text-align: center;
+    font-size: 3rem; /* tamanho da fonte do título da seção "Sobre" */
+    font-weight: 600;
+    margin: 50px; /* espaçamento entre o título e a caixa de conteúdo */
+}
+
+.formulario-contato{
+    gap: 20px; /* espaçamento entre os campos do formulário */
+    max-width: 600px; /* largura máxima do formulário */
+    margin: 0 auto; /* centralizar o formulário */
+    border-radius: 10px;
+    background-color: var(--secundaria);
+    padding: 2rem;
+}
+
+.campo-form{
+    width: 100%; /* ocupar toda a largura do formulário */
+    padding: 1rem; /* espaçamento interno para os campos */
+    background-color: var(--secundaria);
+    color: var(--cor-fonte);
+    outline: none; /* remover contorno ao clicar no campo */
+    margin-bottom: 15px;
+}
+
+.campo-form:focus{
+    border-color: var(--azul-claro);
+    box-shadow: 0 0 10px rgba(79, 70, 229, 0.5);
+}
+
+.botao-form{
+    color: var(--cor-fonte);
+    background-color: #ac5318;
+    padding: 1rem 2rem; /* espaçamento interno para o botão */
+    border: none;
+    font-size: 18px;
+    border-radius: 8px; /* cantos arredondados para o botão */
+    cursor: pointer; /* mudar o cursor ao passar o mouse */
+    font-weight: 600;
+    width: 100%; /* ocupar toda a largura do formulário */
+    transition: background-color 0.7s ease; /* transição suave para o clique */
+}
+
+.botao-form:hover{
+    background-color: #662a03;
+}
+
+footer p{
+    text-align: center;
+    margin: 30px 0; /* espaçamento vertical para o rodapé */
+    font-size: 1rem; /* tamanho da fonte do rodapé */
+    color: #c4c4c4;
+}
