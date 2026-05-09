@@ -22,3 +22,13 @@ function animarSkills() {
         barra.style.animation = ''; // reaplica animação do CSS
     });
 }
+
+function AbrirMenu(){
+    const menuMobile = document.getElementById('menu')
+    menuMobile.classList.toggle('ativo') /* toggle é como um interruptor liga/desliga. */
+}
+
+function FecharMenu(){
+    const menuMobile = document.getElementById('menu')
+    menuMobile.classList.remove('ativo')
+}
