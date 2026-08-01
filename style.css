@@ -432,7 +432,6 @@ body {
 }
 
 .projetos-card:hover {
-    box-shadow: 15px 15px 26px 13px rgba(0, 0, 0, 0.50);
     transform: translateY(-5px);
     /* levantar o card ao passar o mouse */
 }
