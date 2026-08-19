@@ -1,171 +1,544 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rebecca Lobato | Desenvolvedora Front-End & UX/UI</title>
+
+    <!-- Preconnect Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,300..900;1,300..900&family=Jost:ital,wght@0,300..900;1,300..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Favicon -->
     <link rel="shortcut icon" href="assets/logotipo.png" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- Icons (Lucide) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Lenis Smooth Scroll CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.9/dist/lenis.css">
+
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
-    <title>Rebecca | Portfólio</title>
 </head>
+
 <body>
-    <header>
+    <!-- Header / Navigation -->
+    <header class="header">
         <nav class="navegacao">
+
             <ul class="navegacao-menu" id="menu">
-                <li><a href="#inicio" class="menu-link" onclick="FecharMenu()">Início</a></li>
-                <li><a href="#sobre" class="menu-link" onclick="animarSkills(), FecharMenu()">Sobre</a></li>
+                <li><a href="#inicio" class="menu-link nav-link-active" onclick="FecharMenu()">Início</a></li>
+                <li><a href="#sobre" class="menu-link" onclick="FecharMenu()">Sobre</a></li>
+                <li><a href="#skills" class="menu-link" onclick="FecharMenu()">Habilidades</a></li>
                 <li><a href="#projetos" class="menu-link" onclick="FecharMenu()">Projetos</a></li>
                 <li><a href="#certificados" class="menu-link" onclick="FecharMenu()">Certificados</a></li>
                 <li><a href="#contato" class="menu-link" onclick="FecharMenu()">Contato</a></li>
             </ul>
-            <img src="assets/menu-hamburguer.png" alt="menu-hamburguer" id="hamburguer" onclick="AbrirMenu()">
+
+            <div class="nav-cta-wrapper">
+                <a href="#contato" class="btn-primary">
+                    <span>Falar Comigo</span>
+                    <i data-lucide="arrow-up-right"></i>
+                </a>
+            </div>
+
+            <button class="hamburguer-btn" id="hamburguer" onclick="AbrirMenu()" aria-label="Abrir Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </nav>
     </header>
 
-        <main id="inicio" class="cabecalho">
-            <h1 class="cabecalho-titulo animacao-titulo"><span>Rebecca Lobato</span></h1>
-            <p class="cabecalho-paragrafo1">Desenvolvedora Front-End | Designer UX/UI</p>
-            <p class="cabecalho-paragrafo2">HTML • CSS • JavaScript • Python</p>
-        </main>
+    <main>
+        <!-- Hero Section -->
+        <section id="inicio" class="hero-section">
+            <div class="container hero-container">
+                <div class="hero-badge reveal-fade">
+                    <span class="status-dot"></span>
+                    <span>Disponível para novos projetos</span>
+                </div>
 
+                <h1 class="hero-title reveal-text">
+                    <span class="hero-name-moving">Rebecca Lobato Simeão</span>
+                </h1>
 
+                <p class="hero-subtitle reveal-fade">
+                    Desenvolvedora Front-End & Designer UX/UI especializada em criar interfaces sofisticadas, fluidas e
+                    intuitivas.
+                </p>
 
-        <section id="sobre" class="sobre">
-            <h2 class="sobre-titulo">Sobre Mim</h2>
-            <div class="sobre-caixa">
-                <p class="sobre-paragrafo">Olá sou a Rebecca! Tenho grande paixão pela área de tecnologia, atuo como Desenvolvedora Front-End e Designer UX/UI. Gosto de transformar ideias em interfaces sofisticadas e modernas, funcionais e intuitivas, sempre buscando proporcionar a melhor experiência para o usuário.</p>
-                <div class="skills">
-                    <h2 class="titulo-skills">Habilidades Técnicas:</h2>
-                    <ul>
-                        <li>
-                            <div class="flex">
-                                <img src="assets/html.png" alt="foto html5" class="tecnologia">
-                                <h3 class="titulo">HTML5</h3>
-                                <span class="barras"><span class="html"></span></span>
-                            </div>
-                        </li>
+                <div class="hero-tech-tags reveal-fade">
+                    <span class="tech-tag"><i data-lucide="code-2"></i> HTML5 & CSS3</span>
+                    <span class="tech-tag"><i data-lucide="cpu"></i> JavaScript</span>
+                    <span class="tech-tag"><i data-lucide="terminal"></i> Python</span>
+                    <span class="tech-tag"><i data-lucide="figma"></i> UX/UI Figma</span>
+                </div>
 
-                        <li>
-                            <div class="flex">
-                                <img src="assets/css-3.png" alt="foto css3" class="tecnologia">
-                                <h3 class="titulo">CSS3</h3>
-                                <span class="barras"><span class="css"></span></span>
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="flex">
-                                <img src="assets/js.png" alt="foto javascript" class="tecnologia">
-                                <h3 class="titulo">JavaScript</h3>
-                                <span class="barras"><span class="javascript"></span></span>
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="flex">
-                                <img src="assets/python.png" alt="foto python" class="tecnologia">
-                                <h3 class="titulo">Python</h3>
-                                <span class="barras"><span class="python"></span></span>
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="flex">
-                                <img src="assets/figma.png" alt="foto figma" class="tecnologia">
-                                <h3 class="titulo">Figma</h3>
-                                <span class="barras"><span class="figma"></span></span>
-                            </div>
-                        </li>
-                    </ul>
+                <div class="hero-actions reveal-fade">
+                    <a href="#projetos" class="btn-primary">
+                        <span>Ver Meus Projetos</span>
+                        <i data-lucide="sparkles"></i>
+                    </a>
+                    <a href="#contato" class="btn-secondary">
+                        <span>Entre em Contato</span>
+                        <i data-lucide="message-square"></i>
+                    </a>
                 </div>
             </div>
         </section>
 
+        <!-- Sobre mim Section -->
+        <section id="sobre" class="sobre-section section-padding">
+            <div class="container">
+                <div class="section-header reveal-fade">
+                    <span class="section-subtitle">Conheça minha trajetória</span>
+                    <h2 class="section-title">Sobre Mim</h2>
+                </div>
 
-
-        <section id="projetos" class="projetos">
-            <h2 class="projetos-titulo">Meus Projetos</h2>
-            <div class="projetos-caixa">
-                <div class="projetos-card">
-                    <img src="assets/EstetiCar.jpg" alt="" class="projetos-imagem">
-                    <div class="projetos-caixa-textos">
-                        <h3 class="info-projetos">EstetiCar</h3>
-                        <p class="paragrafo-projetos">Projeto Multi-Page em HTML, CSS e JavaScript desenvolvido para a EstetiCar, com páginas dedicadas a serviços de estética automotiva, galeria de trabalhos e agendamento.</p>
-                        <div class="botoes">
-                            <a href="https://github.com/bkannzz/EstetiCar" target="_blank" class="botao-projeto"">Github</a>
-                            <a href="https://bkannzz.github.io/EstetiCar/" target="_blank" class="botao-secundario-projeto"">Deploy</a>
+                <div class="sobre-grid">
+                    <div class="sobre-content reveal-fade">
+                        <p class="sobre-paragrafo">
+                            Olá! Meu nome é <strong>Rebecca</strong>, tenho 18 anos e atualmente curso <strong>Análise e Desenvolvimento de Sistemas</strong> na <strong>UNIP</strong>. Tenho formação técnica em Telecomunicações pelo <strong>ITB</strong> e diversos cursos na área de Tecnologia pelo <strong>SENAI</strong>, com foco em UI/UX Design e Desenvolvimento Front-End.
+                        </p>
+                        <p class="sobre-paragrafo">
+                            Minha paixão é criar interfaces minimalistas, elegantes e funcionais, com o <strong>Figma</strong> como minha principal ferramenta de trabalho. Meu conhecimento em Front-End me permite ter uma visão completa do produto, integrando o design à lógica de implementação para garantir experiências realmente eficientes e centradas no usuário.
+                        </p>
+                        <p class="sobre-paragrafo">
+                            Sou movida pela curiosidade e busco evoluir constantemente através de cursos, leituras e prática. Também estou aprimorando meu inglês no dia a dia. Estou em busca de uma oportunidade para colocar minhas habilidades em prática, adquirir experiência no mercado e colaborar com projetos nos quais eu possa aplicar minha criatividade e visão técnica.
+                        </p>
+                        <div class="sobre-highlights">
+                            <div class="highlight-item">
+                                <div class="highlight-icon"><i data-lucide="layout"></i></div>
+                                <div>
+                                    <h4 class="highlight-title">Design UX/UI</h4>
+                                    <p class="highlight-desc">Prototipagem moderna e layout pensado no usuário.</p>
+                                </div>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon"><i data-lucide="code"></i></div>
+                                <div>
+                                    <h4 class="highlight-title">Front-End Moderno</h4>
+                                    <p class="highlight-desc">HTML5, CSS3 avançado e JavaScript modular.</p>
+                                </div>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon"><i data-lucide="zap"></i></div>
+                                <div>
+                                    <h4 class="highlight-title">Alta Performance</h4>
+                                    <p class="highlight-desc">Carregamento rápido, SEO otimizado e fluidez.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="projetos-card">
-                    <img src="assets/1000172325.png" alt="" class="projetos-imagem">
-                    <div class="projetos-caixa-textos">
-                        <h3 class="info-projetos">Estúdio Âmbar</h3>
-                        <p class="paragrafo-projetos">Projeto Landing Page em HTML, CSS e JavaScript. Desenvolvido para um salão de beleza, com páginas dedicadas a serviços, galeria e agendamento, e possui uma interface responsiva.</p>
-                        <div class="botoes">
-                            <a href="https://github.com/bkannzz/Sal-o-Beleza" target="_blank" class="botao-projeto"">Github</a>
-                            <a href="https://bkannzz.github.io/Sal-o-Beleza/" target="_blank" class="botao-secundario-projeto"">Deploy</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="projetos-card">
-                    <img src="assets/bidev.jpeg" alt="" class="projetos-imagem">
-                    <div class="projetos-caixa-textos">
-                        <h3 class="info-projetos">BIdev.io</h3>
-                        <p class="paragrafo-projetos">Projeto Landing Page em HTML, CSS e JavaScript desenvolvido para a BIdev, com páginas dedicadas a serviços de tecnologia, portfólio de software e contato em uma interface moderna e responsiva.</p>
-                        <div class="botoes">
-                            <a href="https://bidevs.vercel.app/" target="_blank" class="botao-secundario-projeto">Deploy</a>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </section>
 
+        <!-- Skills Section -->
+        <section id="skills" class="skills-section section-padding">
+            <div class="container">
+                <div class="section-header reveal-fade">
+                    <span class="section-subtitle">Tecnologias & Ferramentas</span>
+                    <h2 class="section-title">Habilidades Técnicas</h2>
+                    <p class="section-desc">Conhecimentos práticos e tecnologias utilizadas no meu fluxo de trabalho
+                        diário.</p>
+                </div>
 
+                <div class="skills-grid">
+                    <!-- HTML5 -->
+                    <div class="skill-card reveal-card">
+                        <div class="skill-icon-wrapper">
+                            <img src="assets/html.png" alt="HTML5 Icon" class="skill-img">
+                        </div>
+                        <div class="skill-info">
+                            <div class="skill-header">
+                                <h3 class="skill-title">HTML5</h3>
+                                <span class="skill-percent">95%</span>
+                            </div>
+                            <div class="barras">
+                                <span class="bar-fill" data-width="95%"></span>
+                            </div>
+                        </div>
+                    </div>
 
-        <section id="certificados" class="certificados">
-            <h2 class="certificados-titulo">Minhas Certificações</h2>
-            <div class="certificados-caixa">
-                <ul class="certificados-lista">
-                    <li>Web Designer - Front End - SENAI — 180h</li>
-                    <li>Desenvolvimento JavaScript - SENAI — 60h</li>
-                    <li>Informática Básica - SENAI — 60h</li>
-                    <li>Design UX e UI - SENAI — 40h</li>
-                    <li>IA Generativa aplicada a Programação - SENAI — 48h</li>
-                    <li>Lógica de Programação - SENAI — 14h</li>
-                    <li>Python - FIAP — 160h</li>
-                    <li>User Experience - FIAP — 60h</li>
-                    <li>Introdução a Python - Fundação Bradesco — 18h</li>
-                    <li>POO em Python - Fundação Bradesco — 10h</li>
-                    <li>Fundamentos do Python 1 - Cisco — 30h</li>
-                </ul>
+                    <!-- CSS3 -->
+                    <div class="skill-card reveal-card">
+                        <div class="skill-icon-wrapper">
+                            <img src="assets/css-3.png" alt="CSS3 Icon" class="skill-img">
+                        </div>
+                        <div class="skill-info">
+                            <div class="skill-header">
+                                <h3 class="skill-title">CSS3</h3>
+                                <span class="skill-percent">90%</span>
+                            </div>
+                            <div class="barras">
+                                <span class="bar-fill" data-width="90%"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- JavaScript -->
+                    <div class="skill-card reveal-card">
+                        <div class="skill-icon-wrapper">
+                            <img src="assets/js.png" alt="JavaScript Icon" class="skill-img">
+                        </div>
+                        <div class="skill-info">
+                            <div class="skill-header">
+                                <h3 class="skill-title">JavaScript</h3>
+                                <span class="skill-percent">80%</span>
+                            </div>
+                            <div class="barras">
+                                <span class="bar-fill" data-width="80%"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Python -->
+                    <div class="skill-card reveal-card">
+                        <div class="skill-icon-wrapper">
+                            <img src="assets/python.png" alt="Python Icon" class="skill-img">
+                        </div>
+                        <div class="skill-info">
+                            <div class="skill-header">
+                                <h3 class="skill-title">Python</h3>
+                                <span class="skill-percent">75%</span>
+                            </div>
+                            <div class="barras">
+                                <span class="bar-fill" data-width="75%"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Figma -->
+                    <div class="skill-card reveal-card">
+                        <div class="skill-icon-wrapper">
+                            <img src="assets/figma.png" alt="Figma Icon" class="skill-img">
+                        </div>
+                        <div class="skill-info">
+                            <div class="skill-header">
+                                <h3 class="skill-title">Figma</h3>
+                                <span class="skill-percent">85%</span>
+                            </div>
+                            <div class="barras">
+                                <span class="bar-fill" data-width="85%"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-
-
-        <section id="contato" class="contato">
-            <h2 class="contatos-titulo">Entre em Contato</h2>
-            
-            <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)">
-                <div class="grupo-form">
-                    <input placeholder="Nome" class="campo-form" id="nome" required>
+        <!-- Projetos Section -->
+        <section id="projetos" class="projetos-section section-padding">
+            <div class="container">
+                <div class="section-header reveal-fade">
+                    <span class="section-subtitle">Portfólio Selecionado</span>
+                    <h2 class="section-title">Meus Projetos</h2>
+                    <p class="section-desc">Uma amostra dos trabalhos desenvolvidos focando em estética, código e
+                        experiência.</p>
                 </div>
-                <div class="grupo-form">
-                    <textarea placeholder="Digite sua Mensagem" rows="5" class="campo-form" id="mensagem" required></textarea>
+
+                <div class="projetos-grid">
+                    <!-- Project 1: EstetiCar -->
+                    <article class="projetos-card reveal-card">
+                        <div class="project-media-wrapper">
+                            <img src="assets/EstetiCar.jpg" alt="Projeto EstetiCar"
+                                class="projetos-imagem webgl-target">
+                            <div class="project-overlay">
+                                <span class="project-category">Automotivo / Multi-Page</span>
+                            </div>
+                        </div>
+                        <div class="projetos-caixa-textos">
+                            <h3 class="info-projetos">EstetiCar</h3>
+                            <p class="paragrafo-projetos">
+                                Aplicação web completa desenvolvida para empresa de estética automotiva. Conta com
+                                páginas dedicadas a serviços especializados, galeria de trabalhos e agendamento online.
+                            </p>
+                            <div class="project-tags">
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="botoes">
+                                <a href="https://github.com/bkannzz/EstetiCar" target="_blank" rel="noopener noreferrer"
+                                    class="botao-projeto">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path
+                                            d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4">
+                                        </path>
+                                        <path d="M9 18c-4.51 2-5-2-7-2"></path>
+                                    </svg> GitHub
+                                </a>
+                                <a href="https://bkannzz.github.io/EstetiCar/" target="_blank" rel="noopener noreferrer"
+                                    class="botao-secundario-projeto">
+                                    <i data-lucide="external-link"></i> Deploy
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 2: Estúdio Âmbar -->
+                    <article class="projetos-card reveal-card">
+                        <div class="project-media-wrapper">
+                            <img src="assets/1000172325.png" alt="Projeto Estúdio Âmbar"
+                                class="projetos-imagem webgl-target">
+                            <div class="project-overlay">
+                                <span class="project-category">Beleza & Estética</span>
+                            </div>
+                        </div>
+                        <div class="projetos-caixa-textos">
+                            <h3 class="info-projetos">Estúdio Âmbar</h3>
+                            <p class="paragrafo-projetos">
+                                Landing Page elegante desenvolvida para salão de beleza e estética. Interface limpa,
+                                atraente e responsiva com foco no destaque dos procedimentos e canal direto de
+                                agendamento.
+                            </p>
+                            <div class="project-tags">
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="botoes">
+                                <a href="https://github.com/bkannzz/Sal-o-Beleza" target="_blank"
+                                    rel="noopener noreferrer" class="botao-projeto">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path
+                                            d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4">
+                                        </path>
+                                        <path d="M9 18c-4.51 2-5-2-7-2"></path>
+                                    </svg> GitHub
+                                </a>
+                                <a href="https://bkannzz.github.io/Sal-o-Beleza/" target="_blank"
+                                    rel="noopener noreferrer" class="botao-secundario-projeto">
+                                    <i data-lucide="external-link"></i> Deploy
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 3: BIdev.io -->
+                    <article class="projetos-card reveal-card">
+                        <div class="project-media-wrapper">
+                            <img src="assets/bidev.jpeg" alt="Projeto BIdev.io" class="projetos-imagem webgl-target">
+                            <div class="project-overlay">
+                                <span class="project-category">Tecnologia & Software</span>
+                            </div>
+                        </div>
+                        <div class="projetos-caixa-textos">
+                            <h3 class="info-projetos">BIdev.io</h3>
+                            <p class="paragrafo-projetos">
+                                Landing Page moderna para empresa de tecnologia e desenvolvimento de software,
+                                apresentando serviços de inovação digital, catálogo de soluções e área de contato
+                                corporativo.
+                            </p>
+                            <div class="project-tags">
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>UI Design</span>
+                            </div>
+                            <div class="botoes">
+                                <a href="https://bidevs.vercel.app/" target="_blank" rel="noopener noreferrer"
+                                    class="botao-secundario-projeto">
+                                    <i data-lucide="external-link"></i> Ver Deploy
+                                </a>
+                            </div>
+                        </div>
+                    </article>
                 </div>
-                <button type="submit" class="botao-form">Enviar WhatsApp</button>
-            </form>
+            </div>
         </section>
-    
-    <footer>
-        <a href="https://github.com/bkannzz" class="copyright">© 2026 Rebecca Lobato Simeão</a>
+
+        <!-- Certificados Section -->
+        <section id="certificados" class="certificados-section section-padding">
+            <div class="container">
+                <div class="section-header reveal-fade">
+                    <span class="section-subtitle">Aprendizado Contínuo</span>
+                    <h2 class="section-title">Minhas Certificações</h2>
+                    <p class="section-desc">Cursos e especializações concluídas para aprimorar minhas competências.</p>
+                </div>
+
+                <div class="certificados-grid">
+                    <!-- SENAI Group -->
+                    <div class="cert-card reveal-card">
+                        <div class="cert-card-header">
+                            <div class="cert-institution-badge">SENAI</div>
+                            <i data-lucide="award" class="cert-icon"></i>
+                        </div>
+                        <h3 class="cert-group-title">SENAI — Serviço Nacional de Aprendizagem Industrial</h3>
+                        <ul class="cert-list">
+                            <li><i data-lucide="check-circle-2"></i> <span>Web Designer — Front End
+                                    <small>(180h)</small></span></li>
+                            <li><i data-lucide="check-circle-2"></i> <span>Desenvolvimento JavaScript
+                                    <small>(60h)</small></span></li>
+                            <li><i data-lucide="check-circle-2"></i> <span>Design UX e UI <small>(40h)</small></span>
+                            </li>
+                            <li><i data-lucide="check-circle-2"></i> <span>IA Generativa aplicada à Programação
+                                    <small>(88h)</small></span></li>
+                            <li><i data-lucide="check-circle-2"></i> <span>Informática Básica
+                                    <small>(60h)</small></span></li>
+                            <li><i data-lucide="check-circle-2"></i> <span>Lógica de Programação
+                                    <small>(14h)</small></span></li>
+                        </ul>
+                    </div>
+
+                    <!-- FIAP Group -->
+                    <div class="cert-card reveal-card">
+                        <div class="cert-card-header">
+                            <div class="cert-institution-badge fiap">FIAP</div>
+                            <i data-lucide="graduation-cap" class="cert-icon"></i>
+                        </div>
+                        <h3 class="cert-group-title">FIAP — Faculdade de Informática e Administração Paulista</h3>
+                        <ul class="cert-list">
+                            <li><i data-lucide="check-circle-2"></i> <span>Python Development
+                                    <small>(160h)</small></span></li>
+                            <li><i data-lucide="check-circle-2"></i> <span>User Experience (UX)
+                                    <small>(60h)</small></span></li>
+                            <li><i data-lucide="check-circle-2"></i> <span>Engenharia de Software
+                                    <small>(100h)</small></span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Fundação Bradesco & Cisco Group -->
+                    <div class="cert-card reveal-card">
+                        <div class="cert-card-header">
+                            <div class="cert-institution-badge extra">Outras Especializações</div>
+                            <i data-lucide="book-open" class="cert-icon"></i>
+                        </div>
+                        <h3 class="cert-group-title">Fundação Bradesco & Cisco Networking Academy</h3>
+                        <ul class="cert-list">
+                            <li><i data-lucide="check-circle-2"></i> <span>Fundamentos do Python 1 —
+                                    <strong>Cisco</strong> <small>(30h)</small></span></li>
+                            <li><i data-lucide="check-circle-2"></i> <span>Introdução ao Python —
+                                    <strong>Bradesco</strong> <small>(18h)</small></span></li>
+                            <li><i data-lucide="check-circle-2"></i> <span>POO em Python — <strong>Bradesco</strong>
+                                    <small>(10h)</small></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contato Section -->
+        <section id="contato" class="contato-section section-padding">
+            <div class="container">
+                <div class="contato-wrapper reveal-fade">
+                    <div class="contato-info">
+                        <span class="section-subtitle">Vamos conversar</span>
+                        <h2 class="section-title text-left">Entre em Contato</h2>
+                        <p class="contato-desc">
+                            Tem uma ideia de projeto, deseja contratar meus serviços ou quer apenas trocar um papo sobre
+                            tecnologia e design? Envie uma mensagem diretamente para o meu WhatsApp!
+                        </p>
+
+                        <div class="contato-direct-links">
+                            <div class="contact-link-item">
+                                <div class="contact-icon"><i data-lucide="message-circle"></i></div>
+                                <div>
+                                    <span class="contact-label">WhatsApp Direto</span>
+                                    <a href="https://wa.me/5511981996311" target="_blank" rel="noopener noreferrer"
+                                        class="contact-val link">+55 (11) 98199-6311</a>
+                                </div>
+                            </div>
+                            <div class="contact-link-item">
+                                <div class="contact-icon github-purple">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path
+                                            d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4">
+                                        </path>
+                                        <path d="M9 18c-4.51 2-5-2-7-2"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <span class="contact-label">GitHub Perfil</span>
+                                    <a href="https://github.com/bkannzz" target="_blank" rel="noopener noreferrer"
+                                        class="contact-val link">github.com/bkannzz</a>
+                                </div>
+                            </div>
+                            <div class="contact-link-item">
+                                <div class="contact-icon linkedin-blue">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                        <rect x="2" y="9" width="4" height="12"></rect>
+                                        <circle cx="4" cy="4" r="2"></circle>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <span class="contact-label">LinkedIn Perfil</span>
+                                    <a href="https://www.linkedin.com/in/rebeccalobato/" target="_blank" rel="noopener noreferrer"
+                                        class="contact-val link">linkedin.com/in/rebeccalobato</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contato-form-card">
+                        <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)">
+                            <div class="grupo-form">
+                                <label for="nome" class="form-label">Seu Nome</label>
+                                <div class="input-icon-wrapper">
+                                    <i data-lucide="user" class="field-icon"></i>
+                                    <input type="text" placeholder="Como posso te chamar?" class="campo-form" id="nome"
+                                        required autocomplete="name">
+                                </div>
+                            </div>
+
+                            <div class="grupo-form">
+                                <label for="mensagem" class="form-label">Sua Mensagem</label>
+                                <div class="input-icon-wrapper textarea-wrapper">
+                                    <i data-lucide="message-square" class="field-icon"></i>
+                                    <textarea placeholder="Conte-me um pouco sobre a sua ideia ou projeto..." rows="5"
+                                        class="campo-form" id="mensagem" required></textarea>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn-primary">
+                                <span>Enviar no WhatsApp</span>
+                                <i data-lucide="send"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <span class="logo-text">Bka<span class="dot">.</span></span>
+                <p>Desenvolvedora Front-End & Designer UX/UI</p>
+            </div>
+
+            <a class="copyright">
+                © 2026 Rebecca Lobato Simeão. Todos os direitos reservados.
+            </a>
+        </div>
     </footer>
+
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- Lenis Smooth Scroll Script -->
+    <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
+
+    <!-- Script Principal -->
     <script src="script.js"></script>
 </body>
+
 </html>
