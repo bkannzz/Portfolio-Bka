@@ -53,7 +53,7 @@ body {
     text-rendering: optimizeLegibility;
 }
 
-/* Containers & Common Utilities */
+
 .container {
     width: 90%;
     max-width: 1240px;
