@@ -49,12 +49,8 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
-}
-
-/* Otimização de Performance GPU */
-.reveal-card, .reveal-fade, .projetos-card, .skill-card, .cert-card {
-    will-change: transform, opacity;
-    transform: translateZ(0);
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 /* Containers & Common Utilities */
@@ -419,25 +415,16 @@ body {
 /* Efeito de Movimento Flutuante Suave e Elegante no Nome */
 .hero-name-moving {
     display: inline-block;
-    background-color: rgb(42, 118, 231);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: rgb(42, 118, 231);
     animation: gentleFloat 5s ease-in-out infinite alternate;
-    will-change: transform, filter;
 }
 
 @keyframes gentleFloat {
     0% {
-        transform: translateY(0px) rotate(0deg);
-        filter: drop-shadow(0 4px 12px rgba(64, 3, 114, 0.25));
-    }
-    50% {
-        transform: translateY(-8px) rotate(0.4deg);
-        filter: drop-shadow(0 14px 28px rgba(68, 2, 105, 0.45));
+        transform: translateY(0px);
     }
     100% {
-        transform: translateY(-3px) rotate(-0.3deg);
-        filter: drop-shadow(0 8px 18px rgba(92, 1, 153, 0.137));
+        transform: translateY(-8px);
     }
 }
 

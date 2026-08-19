@@ -69,7 +69,8 @@ function initScrollAnimations() {
         opacity: 0,
         duration: 1.4,
         ease: 'power4.out',
-        stagger: 0.15
+        stagger: 0.15,
+        clearProps: 'transform,opacity'
     });
 
     gsap.from('.reveal-fade', {
@@ -78,7 +79,8 @@ function initScrollAnimations() {
         duration: 1.2,
         ease: 'power4.out',
         stagger: 0.1,
-        delay: 0.2
+        delay: 0.2,
+        clearProps: 'transform,opacity'
     });
 
     // Animação de entrada dos cards de seções (Skills, Projetos, Certificados)
@@ -93,7 +95,8 @@ function initScrollAnimations() {
             y: 50,
             opacity: 0,
             duration: 1.2,
-            ease: 'power4.out'
+            ease: 'power4.out',
+            clearProps: 'transform,opacity'
         });
     });
 
